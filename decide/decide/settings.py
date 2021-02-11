@@ -68,6 +68,8 @@ MODULES = [
     'voting',
 ]
 
+BASEURL = 'https://decidepruebajossanrui5.herokuapp.com'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -158,8 +160,6 @@ except ImportError:
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
-
-BASEURL = 'http://decidepruebajossanrui5.herokuapp.com'
 
 APIS = {
     'authentication': BASEURL,
