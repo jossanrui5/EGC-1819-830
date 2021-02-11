@@ -5,7 +5,7 @@ services:
 addons:
   postgresql: "9.4"
 before_script:
-  - cp local_settings.travis.py local_settings.py
+  - cp travis_local_settings.py local_settings.py
   - psql -c "create user decide with password 'decide2020'" 
   - psql -c "create database decidedb owner decide"
   - psql -U postgres -c "ALTER USER decide CREATEDB"
@@ -16,6 +16,7 @@ install:
   - pip install -r requirements.txt
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test store --keepdb --with-xunit
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+  - python ./manage.py test
+
+if: branch = master
+
