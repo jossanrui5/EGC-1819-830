@@ -19,3 +19,4 @@ script:
   - python ./manage.py test
 
 if: branch = master
+
