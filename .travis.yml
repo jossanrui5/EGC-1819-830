@@ -5,6 +5,7 @@ services:
 addons:
   postgresql: "9.4"
 before_script:
+  - cd decide
   - cp travis_local_settings.py local_settings.py
   - psql -c "create user decide with password 'decide2020'" 
   - psql -c "create database decidedb owner decide"
